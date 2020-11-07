@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/alvaroserrrano/GS-PhoneCatalog">
-    <img src="images/guidesmiths-logo.png" alt="Guidesmith" width="80" height="80">
+    <img src="frontend/public/images/guidesmiths-logo.png" alt="Guidesmith" width="80" height="80">
   </a>
 
   <h3 align="center">PHONE CATALOG</h3>
@@ -111,36 +111,37 @@ $ npm run test
 <!-- THE PROBLEM -->
 
 ## REST API
+
 - Provides phones' information
 - It should have at least one endpoint
-    - Method: GET
-    - Path: /phones
-    - Response body example:
-    ```
-    [
-    {
-        "id": 0,
-        "name": "iPhone 7",
-        "manufacturer": "Apple",
-        "description": "lorem ipsum dolor sit amet consectetur",
-        "color": "black",
-        "price": 769,
-        "imageFileName": "iPhone_7.png",
-        "screen": "4,7 inch IPS",
-        "processor": "A10 Fusion",
-        "ram": 2
-    },
-    ...
-    ]
-    ```
+  - Method: GET
+  - Path: /phones
+  - Response body example:
+  ```
+  [
+  {
+      "id": 0,
+      "name": "iPhone 7",
+      "manufacturer": "Apple",
+      "description": "lorem ipsum dolor sit amet consectetur",
+      "color": "black",
+      "price": 769,
+      "imageFileName": "iPhone_7.png",
+      "screen": "4,7 inch IPS",
+      "processor": "A10 Fusion",
+      "ram": 2
+  },
+  ...
+  ]
+  ```
 
 ## FRONTEND
+
 - The look and feel should not be super sophisticated but it should be decent and somehow responsive so that it doesn't look terrible on a mobile phone
 - The home page should display the list of phones. Make sure to display images of them
 - It should be possible to select a given phone and obtain the phone details view displaying a few more info about that phone.
 - The phone's information should be retrieved from the above described API.
 - There should be a spinner or placeholder component while the REST API request is ongoing and the app is waiting for phones data.
-
 
 ## Roadmap
 
@@ -195,4 +196,3 @@ Project Link: [https://github.com/alvaroserrrano/GS-PhoneCatalog](https://github
 [license-url]: https://github.com/alvaroserrrano/repo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/alvaroserrano
-

@@ -1,0 +1,19 @@
+{
+  "name": "gs-phonecatalag",
+  "version": "1.0.0",
+  "description": "GuideSmith Phone catalog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvaroserrrano/GS-PhoneCatalog.git"
+  },
+  "author": "Alvaro Serrano Rivas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alvaroserrrano/GS-PhoneCatalog/issues"
+  },
+  "homepage": "https://github.com/alvaroserrrano/GS-PhoneCatalog#readme"
+}
