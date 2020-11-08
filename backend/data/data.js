@@ -1,8 +1,22 @@
 /* eslint-disable import/no-anonymous-default-export */
+import bcrypt from 'bcryptjs';
 export default {
+  users: [
+    {
+      name: 'Alvaro',
+      email: 'alvaro@example.com',
+      password: bcrypt.hashSync('1234', 8),
+      isAdmin: false,
+    },
+    {
+      name: 'Guidesmith',
+      email: 'guidesmith@example.com',
+      password: bcrypt.hashSync('2345', 8),
+      isAdmin: true,
+    },
+  ],
   products: [
     {
-      _id: 0,
       name: 'iPhone 7',
       manufacturer: 'Apple',
       description: 'lorem ipsum dolor sit amet consectetur',
@@ -18,7 +32,6 @@ export default {
       countInStock: 10000,
     },
     {
-      _id: 1,
       name: 'iPhone 8',
       manufacturer: 'Apple',
       description: 'lorem ipsum dolor sit amet consectetur',
@@ -34,7 +47,6 @@ export default {
       countInStock: 10000,
     },
     {
-      _id: 3,
       name: 'iPhone X',
       manufacturer: 'Apple',
       description: 'lorem ipsum dolor sit amet consectetur',
@@ -50,7 +62,6 @@ export default {
       countInStock: 10000,
     },
     {
-      _id: 4,
       name: 'iPhone X',
       manufacturer: 'Apple',
       description: 'lorem ipsum dolor sit amet consectetur',
@@ -66,7 +77,6 @@ export default {
       countInStock: 10000,
     },
     {
-      _id: 5,
       name: 'iPhone X',
       manufacturer: 'Apple',
       description: 'lorem ipsum dolor sit amet consectetur',
@@ -82,7 +92,6 @@ export default {
       countInStock: 10000,
     },
     {
-      _id: 6,
       name: 'iPhone X',
       manufacturer: 'Apple',
       description: 'lorem ipsum dolor sit amet consectetur',

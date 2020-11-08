@@ -23,10 +23,15 @@ uploads/*.png
 #testing
 /coverage
 
+#config
+/backend/config.js
+
 #build
 /build
 
 #misc
+config.env
+*.env
 .DS_Store
 .env
 .env.local
