@@ -11,7 +11,10 @@
   max-height: 400px;
   min-width: 100px;
 }
-
+.product__name {
+  font-size: 2rem;
+  font-weight: bold;
+}
 .product__info {
   height: 100px;
   margin-bottom: 15px;

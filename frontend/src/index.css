@@ -75,7 +75,8 @@ input {
 }
 a {
   text-decoration: none;
+  color: #3d5a80;
 }
 a:hover {
-  color: #ff8000;
+  color: #ee6c4d;
 }

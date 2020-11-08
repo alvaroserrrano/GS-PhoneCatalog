@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Product } from './Product';
 import { Spinner } from './Spinner';
 import { MessageBox } from './MessageBox';
 import '../styles/Home.css';
-import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { getProducts } from '../actions/productActions';
 
@@ -30,11 +29,15 @@ export const Home = () => {
           <div className='home__row'>
             {products.map((product) => (
               <Product
-                id={product.id}
+                _id={product._id}
                 name={product.name}
                 manufacturer={product.manufacturer}
                 price={product.price}
                 imageFileName={product.imageFileName}
+                ram={product.ram}
+                description={product.description}
+                screen={product.screen}
+                color={product.color}
               ></Product>
             ))}
           </div>
