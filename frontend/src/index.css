@@ -34,10 +34,10 @@ button {
 .button:hover {
   border: 0.1rem #404040 solid;
 }
-.button.primary {
+.button__primary {
   background-color: #f0c040;
 }
-.button.secondary {
+.button__secondary {
   background-color: #f0f0f0;
 }
 input {

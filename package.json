@@ -1,10 +1,12 @@
 {
   "name": "gs-phonecatalag",
+  "type": "module",
   "version": "1.0.0",
   "description": "GuideSmith Phone catalog",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,15 @@
   "bugs": {
     "url": "https://github.com/alvaroserrrano/GS-PhoneCatalog/issues"
   },
-  "homepage": "https://github.com/alvaroserrrano/GS-PhoneCatalog#readme"
+  "homepage": "https://github.com/alvaroserrrano/GS-PhoneCatalog#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "12.4.0",
+    "npm": "6.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
 }

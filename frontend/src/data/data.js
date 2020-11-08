@@ -1,0 +1,83 @@
+/* eslint-disable import/no-anonymous-default-export */
+export default {
+  products: [
+    {
+      _id: 0,
+      name: 'iPhone 7',
+      manufacturer: 'Apple',
+      description: 'lorem ipsum dolor sit amet consectetur',
+      color: 'black',
+      price: 769,
+      imageFileName:
+        'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone11-select-2019-family_GEO_EMEA?wid=882&amp;hei=1058&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1567022219953',
+      screen: '4,7 inch IPS',
+      processor: 'A10 Fusion',
+      ram: 2,
+    },
+    {
+      _id: 1,
+      name: 'iPhone 8',
+      manufacturer: 'Apple',
+      description: 'lorem ipsum dolor sit amet consectetur',
+      color: 'black',
+      price: 600,
+      imageFileName:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSYZgQkGhzzaGImYLNE-ZWbI7tkXePwnd0DqA&usqp=CAU',
+      screen: '4,7 inch IPS',
+      processor: 'A10 Fusion',
+      ram: 2,
+    },
+    {
+      _id: 3,
+      name: 'iPhone X',
+      manufacturer: 'Apple',
+      description: 'lorem ipsum dolor sit amet consectetur',
+      color: 'black',
+      price: 769,
+      imageFileName:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT-RI7SFBXOe_PXGdZXsXdiL4J0LHx-7oYnjw&usqp=CAU',
+      screen: '4,7 inch IPS',
+      processor: 'A10 Fusion',
+      ram: 2,
+    },
+    {
+      _id: 4,
+      name: 'iPhone X',
+      manufacturer: 'Apple',
+      description: 'lorem ipsum dolor sit amet consectetur',
+      color: 'black',
+      price: 769,
+      imageFileName:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSzeFatYtMdPh6Sv1XXgB0LOeS2jOVSVLrjXA&usqp=CAU',
+      screen: '4,7 inch IPS',
+      processor: 'A10 Fusion',
+      ram: 2,
+    },
+    {
+      _id: 5,
+      name: 'iPhone X',
+      manufacturer: 'Apple',
+      description: 'lorem ipsum dolor sit amet consectetur',
+      color: 'black',
+      price: 769,
+      imageFileName:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT9-hp3koz9hufESnkNjMmF21AcFrv9n0YT7g&usqp=CAU',
+      screen: '4,7 inch IPS',
+      processor: 'A10 Fusion',
+      ram: 2,
+    },
+    {
+      _id: 6,
+      name: 'iPhone X',
+      manufacturer: 'Apple',
+      description: 'lorem ipsum dolor sit amet consectetur',
+      color: 'black',
+      price: 769,
+      imageFileName:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSHxdWYtVEOX_h0pipyYHeKT46oTS9R3-aPUQ&usqp=CAU',
+      screen: '4,7 inch IPS',
+      processor: 'A10 Fusion',
+      ram: 2,
+    },
+  ],
+};

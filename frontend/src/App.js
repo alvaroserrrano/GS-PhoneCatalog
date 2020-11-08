@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Profile } from './components/Profile';
-import { Product } from './components/Product';
+import { ProductPage } from './components/ProductPage';
 import { PlaceOrder } from './components/PlaceOrder';
 import { Orders } from './components/Orders';
 import { Order } from './components/Order';
@@ -22,7 +22,7 @@ const App = () => (
     <div className='main'>
       <div className='content'>
         <Route path='/profile' component={Profile} />
-        <Route path='/product/:id' component={Product} />
+        <Route path='/product/:id' component={ProductPage} />
         <Route path='/placeorder' component={PlaceOrder} />
         <Route path='/orders' component={Orders} />
         <Route path='/order/:id' component={Order} />
