@@ -54,7 +54,12 @@ input {
 #root {
   height: 100%;
 }
-
+.error {
+  color: red;
+}
+.alert {
+  color: #3d5a80;
+}
 a {
   text-decoration: none;
 }
