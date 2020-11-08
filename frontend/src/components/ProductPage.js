@@ -83,7 +83,7 @@ export const ProductPage = (props) => {
                 <li>
                   Qty:{' '}
                   <select
-                    value={product.qty}
+                    value={qty}
                     onChange={(e) => {
                       setQty(e.target.value);
                     }}
