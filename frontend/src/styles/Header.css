@@ -2,7 +2,7 @@
   height: 60px;
   display: flex;
   align-items: center;
-  background-color: #131921;
+  background-color: #3d5a80;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -54,7 +54,7 @@
   font-size: 13px;
   font-weight: 800;
 }
-.header__optionBasket {
+.header__optionCart {
   display: flex;
   align-items: center;
   color: white;

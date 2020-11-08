@@ -4,12 +4,11 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Link } from 'react-router-dom';
 
-const Header = () => (
+export const Header = () => (
   <div className='header'>
     <Link to='/'>
       <img
         className='header__logo'
-        // src='../../public/images/guidesmiths-logo.png'
         src='http://pngimg.com/uploads/phone/phone_PNG48959.png'
         alt='guidesmiht logo'
       />
@@ -30,7 +29,7 @@ const Header = () => (
         </div>
       </Link>
       <Link to='/checkout'>
-        <div className='header__optionBasket'>
+        <div className='header__optionCart'>
           <ShoppingBasketIcon />
           <span className='header__optionLineTwo header__basketCount'>1</span>
         </div>
@@ -38,5 +37,3 @@ const Header = () => (
     </div>
   </div>
 );
-
-export default Header;

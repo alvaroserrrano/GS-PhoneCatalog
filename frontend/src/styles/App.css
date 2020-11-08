@@ -1,0 +1,11 @@
+.app {
+  grid-area: main;
+}
+.footer {
+  grid-area: footer;
+  background-color: #131921;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
