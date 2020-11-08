@@ -28,7 +28,7 @@ export const Home = () => {
       {loading ? (
         <Spinner></Spinner>
       ) : error ? (
-        <MessageBox>{error}</MessageBox>
+        <MessageBox variant='danger'>{error}</MessageBox>
       ) : (
         <div className='home__container'>
           {/* <img
