@@ -38,6 +38,8 @@ export const Home = () => {
                 description={product.description}
                 screen={product.screen}
                 color={product.color}
+                rating={product.rating}
+                numReviews={product.numReviews}
               ></Product>
             ))}
           </div>

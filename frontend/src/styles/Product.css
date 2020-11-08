@@ -69,6 +69,7 @@
 }
 .details__action {
   flex: 1 1 30rem;
+  background-color: #e0fbfc;
 }
 
 .details__info ul,

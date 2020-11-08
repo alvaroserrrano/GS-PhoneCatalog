@@ -31,11 +31,14 @@ button {
   border-radius: 0.5rem;
   cursor: pointer;
 }
+input:hover,
+select:hover,
+textarea:hover,
 .button:hover {
   border: 0.1rem #404040 solid;
 }
 .button__primary {
-  background-color: #f0c040;
+  background-color: #ee6c4d;
 }
 .button__secondary {
   background-color: #f0f0f0;

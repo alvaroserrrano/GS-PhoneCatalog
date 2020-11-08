@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Spinner } from './Spinner';
 import { MessageBox } from './MessageBox';
@@ -6,6 +6,7 @@ import '../styles/Product.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProduct } from '../actions/productActions';
 export const ProductPage = (props) => {
+  const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
   const productId = props.match.params.id;
   const productDetails = useSelector((state) => state.product);
@@ -13,7 +14,9 @@ export const ProductPage = (props) => {
   useEffect(() => {
     dispatch(getProduct(productId));
   }, [dispatch, productId]);
-
+  const handleAddToCart = () => {
+    props.history.push('/cart/' + props.match.params.id + '?qty=' + qty);
+  };
   return (
     <div>
       {loading ? (
@@ -23,7 +26,9 @@ export const ProductPage = (props) => {
       ) : (
         <div>
           <div className='back__home'>
-            <Link to='/'>Back Home</Link>
+            <Link to='/'>
+              <button className='button__primary'>Back Home</button>
+            </Link>
           </div>
           <div className='details'>
             {/* <div className='details__image'>
@@ -70,16 +75,35 @@ export const ProductPage = (props) => {
             </div>
             <div className='details__action'>
               <ul>
-                <li>Price:{product.price}</li>
+                <li>Price: {product.price}</li>
                 <li>
-                  Quantity:{' '}
-                  <select name='' id=''>
-                    <option value=''>1</option>
-                    <option value=''>2</option>
-                    <option value=''>3</option>
-                    <option value=''>4</option>
-                    <option value=''>5</option>
+                  Status:{' '}
+                  {product.countInStock > 0 ? 'In Stock' : 'Unavailable.'}
+                </li>
+                <li>
+                  Qty:{' '}
+                  <select
+                    value={product.qty}
+                    onChange={(e) => {
+                      setQty(e.target.value);
+                    }}
+                  >
+                    {[...Array(product.countInStock).keys()].map((x) => (
+                      <option key={x + 1} value={x + 1}>
+                        {x + 1}
+                      </option>
+                    ))}
                   </select>
+                </li>
+                <li>
+                  {product.countInStock > 0 && (
+                    <button
+                      onClick={handleAddToCart}
+                      className='button__primary'
+                    >
+                      Add to Cart
+                    </button>
+                  )}
                 </li>
               </ul>
             </div>

@@ -10,6 +10,8 @@ export const Product = ({
   ram,
   screen,
   description,
+  rating,
+  numReviews,
 }) => {
   return (
     <div>

@@ -13,6 +13,9 @@ export default {
       screen: '4,7 inch IPS',
       processor: 'A10 Fusion',
       ram: 2,
+      rating: 4.5,
+      numReviews: 8,
+      countInStock: 10000,
     },
     {
       _id: 1,
@@ -26,6 +29,9 @@ export default {
       screen: '4,7 inch IPS',
       processor: 'A10 Fusion',
       ram: 2,
+      rating: 4.5,
+      numReviews: 8,
+      countInStock: 10000,
     },
     {
       _id: 3,
@@ -39,6 +45,9 @@ export default {
       screen: '4,7 inch IPS',
       processor: 'A10 Fusion',
       ram: 2,
+      rating: 4.5,
+      numReviews: 8,
+      countInStock: 10000,
     },
     {
       _id: 4,
@@ -52,6 +61,9 @@ export default {
       screen: '4,7 inch IPS',
       processor: 'A10 Fusion',
       ram: 2,
+      rating: 4.5,
+      numReviews: 8,
+      countInStock: 10000,
     },
     {
       _id: 5,
@@ -65,6 +77,9 @@ export default {
       screen: '4,7 inch IPS',
       processor: 'A10 Fusion',
       ram: 2,
+      rating: 4.5,
+      numReviews: 8,
+      countInStock: 10000,
     },
     {
       _id: 6,
@@ -78,6 +93,9 @@ export default {
       screen: '4,7 inch IPS',
       processor: 'A10 Fusion',
       ram: 2,
+      rating: 4.5,
+      numReviews: 8,
+      countInStock: 10000,
     },
   ],
 };

@@ -24,8 +24,6 @@ export const getProduct = (productId) => async (dispatch) => {
   dispatch({ type: PRODUCT_REQUEST, payload: productId });
   try {
     const { data } = await axios.get(`/api/v1/products/${productId}`);
-    console.log(data);
-    console.log('Hi');
     dispatch({ type: PRODUCT_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
