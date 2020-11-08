@@ -4,24 +4,15 @@ import { Spinner } from './Spinner';
 import { MessageBox } from './MessageBox';
 import '../styles/Home.css';
 import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import { getProducts } from '../actions/productActions';
 
 export const Home = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const productsList = useSelector((state) => state.products);
+  const dispatch = useDispatch();
+  const { products, loading, error } = productsList;
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const { data } = await axios.get('/api/products');
-        setLoading(false);
-        setProducts(data);
-      } catch (error) {
-        setError(error.message);
-        setLoading(false);
-      }
-    };
-    fetchData();
+    dispatch(getProducts());
   }, []);
   return (
     <div className='home'>
