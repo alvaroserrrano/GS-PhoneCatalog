@@ -185,3 +185,17 @@ img.large {
   font-size: 2.5rem;
   text-align: right;
 }
+
+.form {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+.form > div {
+  display: flex;
+  flex-direction: column;
+  margin: 1 rem;
+}
+.form label {
+  margin: 1 rem 0;
+  display: block;
+}

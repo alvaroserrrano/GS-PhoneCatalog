@@ -7,6 +7,8 @@ import { useSelector } from 'react-redux';
 export const Header = () => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
   return (
     <div className='header'>
       <Link to='/'>
@@ -21,10 +23,16 @@ export const Header = () => {
         <SearchIcon className='header__searchIcon' />
       </div>
       <div className='header__nav'>
-        <div className='header__option'>
-          <span className='header__optionLineOne'></span>
-          <span className='header__optionLineTwo'>Sign in</span>
-        </div>
+        {userInfo ? (
+          <Link to='#'>{userInfo.name}</Link>
+        ) : (
+          <Link to='/login'>
+            <div className='header__option'>
+              <span className='header__optionLineOne'></span>
+              <span className='header__optionLineTwo'>Login</span>
+            </div>
+          </Link>
+        )}
         <Link to='/orders'>
           <div className='header__option'>
             <span className='header__optionLineOne'>Your</span>
