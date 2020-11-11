@@ -3,12 +3,17 @@ import '../styles/Header.css';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { logout } from '../actions/userActions';
+import { useSelector, useDispatch } from 'react-redux';
 export const Header = () => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(logout());
+  };
   return (
     <div className='header'>
       <Link to='/'>
@@ -24,7 +29,12 @@ export const Header = () => {
       </div>
       <div className='header__nav'>
         {userInfo ? (
-          <Link to='#'>{userInfo.name}</Link>
+          <Link to='#logout' onClick={handleLogout}>
+            <div className='header__option'>
+              <span className='header__optionLineOne'></span>
+              <span className='header__optionLineTwo'>Logout</span>
+            </div>
+          </Link>
         ) : (
           <Link to='/login'>
             <div className='header__option'>

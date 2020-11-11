@@ -1,18 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../actions/userActions';
+import { PromiseProvider } from 'mongoose';
 
-export const Login = () => {
+export const Login = (props) => {
   //local state
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const redirect = props.location.search
+    ? props.location.search.split('=')[1]
+    : '/';
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(login(email, password));
   };
-
+  useEffect(() => {
+    if (userInfo) {
+      props.history.push(redirect);
+    }
+  }, [userInfo]);
   return (
     <div>
       <form action='' onSubmit={handleSubmit} className='form'>

@@ -19,14 +19,13 @@ mongoose
 const app = express();
 
 app.use(express.json());
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: err.message });
+});
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/products', productRouter);
-
-app.use((err, req, res, next) => {
-  res.status(500).send({ message: err.message });
-});
 
 app.get('/api/v1/products', (req, res) => {
   res.send(data.products);

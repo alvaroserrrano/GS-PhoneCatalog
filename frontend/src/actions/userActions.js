@@ -1,4 +1,9 @@
-import { LOGIN_FAIL, LOGIN_REQUEST } from '../constants/userConstants';
+import {
+  LOGIN_FAIL,
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+  LOGOUT_REQUEST,
+} from '../constants/userConstants';
 import axios from 'axios';
 
 export const login = (email, password) => async (dispatch) => {
@@ -7,6 +12,10 @@ export const login = (email, password) => async (dispatch) => {
     const { data } = await axios.post('/api/v1/users/login', {
       email,
       password,
+    });
+    dispatch({
+      type: LOGIN_SUCCESS,
+      payload: data,
     });
     localStorage.setItem('userInfo', JSON.stringify(data));
   } catch (error) {
@@ -18,4 +27,10 @@ export const login = (email, password) => async (dispatch) => {
           : error.message,
     });
   }
+};
+
+export const logout = () => (dispatch) => {
+  localStorage.removeItem('userInfo');
+  localStorage.removeItem('cartItems');
+  dispatch({ type: LOGOUT_REQUEST });
 };
