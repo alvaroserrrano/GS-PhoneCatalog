@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../actions/userActions';
 import { PromiseProvider } from 'mongoose';
-
+import { Spinner } from './Spinner';
+import { MessageBox } from './Message';
 export const Login = (props) => {
   //local state
   const [email, setEmail] = useState('');
@@ -12,7 +13,7 @@ export const Login = (props) => {
     ? props.location.search.split('=')[1]
     : '/';
   const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
+  const { userInfo, loading, error } = userLogin;
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,6 +30,8 @@ export const Login = (props) => {
         <div>
           <h1>Login</h1>
         </div>
+        {loading && <Spinner></Spinner>}
+        {error && <MessageBox variant='danger'>{error}</MessageBox>}
         <div>
           <label htmlFor='email'>Email</label>
           <input
