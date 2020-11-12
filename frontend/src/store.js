@@ -2,7 +2,10 @@ import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { productReducer, productsReducer } from './reducers/productsReducer';
 import { cartReducer } from './reducers/cartReducer';
-import { userLoginReducer } from './reducers/userLoginReducer';
+import {
+  userLoginReducer,
+  userRegisterReducer,
+} from './reducers/userLoginReducer';
 
 const initialState = {
   userLogin: {
@@ -14,6 +17,9 @@ const initialState = {
     cartItems: localStorage.getItem('cartItems')
       ? JSON.parse(localStorage.getItem('cartItems'))
       : [],
+    shippingAddress: localStorage.getItem('shippingAddress')
+      ? JSON.stringify(localStorage.getItem('shippingAddress'))
+      : {},
   },
 };
 
@@ -22,6 +28,7 @@ const reducer = combineReducers({
   product: productReducer,
   cart: cartReducer,
   userLogin: userLoginReducer,
+  userRegister: userRegisterReducer,
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

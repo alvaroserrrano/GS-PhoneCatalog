@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../actions/userActions';
-import { PromiseProvider } from 'mongoose';
 import { Spinner } from './Spinner';
-import { MessageBox } from './Message';
+import { MessageBox } from './MessageBox';
 export const Register = (props) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const redirect = props.location.search
     ? props.location.search.split('=')[1]
     : '/';
@@ -17,7 +17,11 @@ export const Register = (props) => {
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(register(name, email, password));
+    if (password !== confirmPassword) {
+      alert('Password and confirm password do not match');
+    } else {
+      dispatch(register(name, email, password));
+    }
   };
   useEffect(() => {
     if (userInfo) {
@@ -41,7 +45,7 @@ export const Register = (props) => {
             placeholder='Name'
             required
             onChange={(e) => {
-              setEmail(e.target.value);
+              setName(e.target.value);
             }}
           />
         </div>
@@ -70,6 +74,17 @@ export const Register = (props) => {
           />
         </div>
         <div>
+          <label htmlFor='passwordConfirm'>Confirm Password</label>
+          <input
+            type='password'
+            name='passwordConfirm'
+            id='passwordConfirm'
+            placeholder='Confirm password'
+            required
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+        </div>
+        <div>
           <label htmlFor=''>
             <button className='button__primary' type='submit'>
               Register
@@ -80,7 +95,9 @@ export const Register = (props) => {
           <label htmlFor=''>
             <div>
               Already have an account?{' '}
-              <Link to='/login'>Log in to your account</Link>
+              <Link to={`/login?redirect=${redirect}`}>
+                Log in to your account
+              </Link>
             </div>
           </label>
         </div>

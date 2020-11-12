@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../actions/userActions';
-import { PromiseProvider } from 'mongoose';
 import { Spinner } from './Spinner';
-import { MessageBox } from './Message';
+import { MessageBox } from './MessageBox';
 export const Login = (props) => {
   //local state
   const [email, setEmail] = useState('');
@@ -66,7 +65,10 @@ export const Login = (props) => {
         <div>
           <label htmlFor=''>
             <div>
-              New Customer? <Link to='/register'>Create a new account</Link>
+              New Customer?{' '}
+              <Link to={`/register?redirect=${redirect}`}>
+                Create a new account
+              </Link>
             </div>
           </label>
         </div>

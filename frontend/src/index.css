@@ -218,3 +218,14 @@ img.large {
 .dropdown:hover {
   display: block;
 } */
+.checkout__steps > div {
+  border-top: 0.3rem #c0c0c0 solid;
+  color: #c0c0c0;
+  float: 1px;
+  padding: 1rem;
+  font-weight: bold;
+}
+.checkout__steps > div.active {
+  border-top-color: #ee6c4d;
+  color: #ee6c4d;
+}
