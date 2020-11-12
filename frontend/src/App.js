@@ -6,6 +6,7 @@ import { PlaceOrder } from './components/PlaceOrder';
 import { Orders } from './components/Orders';
 import { Order } from './components/Order';
 import { Checkout } from './components/Checkout';
+import { PaymentMethod } from './components/PaymentMethod';
 import { Shipping } from './components/Shipping';
 import { Login } from './components/Login';
 import { Register } from './components/Register';
@@ -27,6 +28,7 @@ const App = () => (
         <Route path='/orders' component={Orders} />
         <Route path='/order/:id' component={Order} />
         <Route path='/checkout' component={Checkout} />
+        <Route path='/payment' component={PaymentMethod} />
         <Route path='/shipping' component={Shipping} />
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
