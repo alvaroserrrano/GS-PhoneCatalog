@@ -2,6 +2,7 @@ import express from 'express';
 import data from './data/data.js';
 import mongoose from 'mongoose';
 import userRouter from './routes/userRoutes.js';
+import orderRouter from './routes/orderRoutes.js';
 import productRouter from './routes/productRoutes.js';
 import config from './config.js';
 
@@ -26,6 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/products', productRouter);
+app.use('/api/v1/orders', orderRouter);
 
 app.get('/api/v1/products', (req, res) => {
   res.send(data.products);

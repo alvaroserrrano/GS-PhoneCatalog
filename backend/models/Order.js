@@ -8,9 +8,11 @@ const orderSchema = new mongoose.Schema(
         qty: { type: Number, required: true },
         imageFileName: { type: String, required: true },
         price: { type: Number, required: true },
-        product: { type: mongoose.Schema.Types.ObjectId },
-        ref: 'Product',
-        required: true,
+        product: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Product',
+          // required: true,
+        },
       },
     ],
     shippingAddress: {
@@ -34,5 +36,5 @@ const orderSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Order = mongoose.model('Order', orderSchema);
-export default Order;
+const orderModel = mongoose.model('Order', orderSchema);
+export default orderModel;
