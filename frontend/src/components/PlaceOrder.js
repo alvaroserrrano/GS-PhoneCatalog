@@ -116,7 +116,7 @@ export const PlaceOrder = (props) => {
             <li>
               <button
                 type='button'
-                className='block button__primary'
+                className=' button__primary'
                 onClick={handleSubmit}
                 disabled={cart.cartItems.length === 0}
               >

@@ -52,9 +52,9 @@ export const Order = (props) => {
   ) : error ? (
     <MessageBox variant='danger'></MessageBox>
   ) : (
-    <div>
-      <h1>Order {order._id}</h1>
-      <div className='row-top'>
+    <div className='order'>
+      <h1>Order</h1>
+      <div className='row-top '>
         <div className='col-2'>
           <ul>
             <li>
@@ -68,6 +68,12 @@ export const Order = (props) => {
                   {order.shippingAddress.zipCode},{' '}
                   {order.shippingAddress.country}
                 </p>
+                <br />
+                <p className='order__id'>
+                  <strong> Order id: </strong>
+                  {order._id}
+                </p>
+                <br />
                 {order.isDelivered ? (
                   <MessageBox variant='success'>
                     Delivered on {order.deliveredOn}

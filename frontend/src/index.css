@@ -320,3 +320,10 @@ table button {
 .price {
   font-size: 2rem;
 }
+.history__container {
+  display: block;
+  position: relative;
+  width: 960px;
+  margin: 2rem auto;
+  padding: 0;
+}

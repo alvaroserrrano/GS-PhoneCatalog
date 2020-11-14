@@ -11,7 +11,7 @@ export const Orders = (props) => {
     dispatch(listOrders());
   }, [dispatch]);
   return (
-    <div>
+    <div className='history__container'>
       <h1>Your orders history</h1>
       {loading ? (
         <Spinner></Spinner>

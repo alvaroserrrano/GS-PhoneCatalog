@@ -71,9 +71,6 @@ export const Cart = (props) => {
                         </option>
                       ))}
                     </select>
-                  </div>
-                  <div className='checkoutProduct__price'>${item.price}</div>
-                  <div>
                     <button
                       className='button__primary'
                       onClick={() => {
