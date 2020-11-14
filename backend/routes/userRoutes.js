@@ -5,7 +5,7 @@ import data from '../data/data.js';
 const userRouter = express.Router();
 import bcrypt from 'bcryptjs';
 import { generateToken } from '../utils.js';
-import { reset } from 'nodemon';
+import { isAuth } from '../utils.js';
 
 userRouter.post(
   '/login',
