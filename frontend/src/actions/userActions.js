@@ -3,6 +3,9 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGOUT_REQUEST,
+  PROFILE_FAIL,
+  PROFILE_REQUEST,
+  PROFILE_SUCCESS,
   REGISTER_FAIL,
   REGISTER_REQUEST,
   REGISTER_SUCCESS,
@@ -55,7 +58,7 @@ export const register = (name, email, password) => async (dispatch) => {
     localStorage.setItem('userInfo', JSON.stringify(data));
   } catch (error) {
     dispatch({
-      type: LOGIN_FAIL,
+      type: REGISTER_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
@@ -77,6 +80,29 @@ export const getUserDetails = (userId) => async (dispatch, getState) => {
   } catch (error) {
     dispatch({
       type: USER_DETAILS_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
+
+export const updateProfile = (user) => async (dispatch, getState) => {
+  dispatch({ type: PROFILE_REQUEST, payload: user });
+  const {
+    userLogin: { userInfo },
+  } = getState();
+  try {
+    const { data } = await axios.put(`/api/v1/users/profile`, user, {
+      headers: { Authorization: `Bearer ${userInfo.token}` },
+    });
+    dispatch({ type: PROFILE_SUCCESS, payload: data });
+    dispatch({ type: LOGIN_SUCCESS });
+    localStorage.setItem('userInfo', JSON.stringify(data));
+  } catch (error) {
+    dispatch({
+      type: PROFILE_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message

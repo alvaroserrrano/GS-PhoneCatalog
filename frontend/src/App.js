@@ -12,6 +12,7 @@ import { Login } from './components/Login';
 import { Register } from './components/Register';
 import { Cart } from './components/Cart';
 import { Home } from './components/Home';
+import { PrivateRoute } from './components/PrivateRoute';
 import './styles/App.css';
 
 const App = () => (
@@ -22,7 +23,7 @@ const App = () => (
     </div>
     <div className='main'>
       <div className='content'>
-        <Route path='/profile' component={Profile} />
+        <PrivateRoute path='/profile' component={Profile} />
         <Route path='/product/:id' component={ProductPage} />
         <Route path='/placeorder' component={PlaceOrder} />
         <Route path='/orders' component={Orders} />
