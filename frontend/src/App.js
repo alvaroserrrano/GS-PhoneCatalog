@@ -26,7 +26,7 @@ const App = () => (
         <Route path='/product/:id' component={ProductPage} />
         <Route path='/placeorder' component={PlaceOrder} />
         <Route path='/orders' component={Orders} />
-        <Route path='/order/:id' component={Order} />
+        <Route path='/orders/:id' component={Order} />
         <Route path='/checkout' component={Checkout} />
         <Route path='/payment' component={PaymentMethod} />
         <Route path='/shipping' component={Shipping} />

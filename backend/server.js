@@ -29,6 +29,10 @@ app.use('/api/v1/users', userRouter);
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/orders', orderRouter);
 
+app.get('/api/v1/config/paypal', (req, res) => {
+  res.send(config.PAYPAL_CLIENT_ID || 'sb');
+});
+
 app.get('/api/v1/products', (req, res) => {
   res.send(data.products);
 });

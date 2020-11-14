@@ -49,6 +49,9 @@ button {
   border-radius: 0.5rem;
   cursor: pointer;
 }
+button.small {
+  font-size: 1.2rem;
+}
 input:hover,
 select:hover,
 textarea:hover,
@@ -90,9 +93,17 @@ input {
   color: #3d5a80;
   background-color: #e0e0ff;
 }
+.alert-danger {
+  color: red;
+  background-color: #ffe0e0;
+}
 .alert-error {
   color: red;
   background-color: #ffe0e0;
+}
+.alert-success {
+  color: #20a020;
+  background-color: #eeffe0;
 }
 a {
   text-decoration: none;
@@ -228,4 +239,20 @@ img.large {
 .checkout__steps > div.active {
   border-top-color: #ee6c4d;
   color: #ee6c4d;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table tbody tr:nth-of-type(odd) {
+  background-color: #f4f4f4;
+}
+.table td,
+.table th {
+  text-align: left;
+  border: 0.1 rem solid #e4e4e4;
+  padding: 0.5 rem;
+}
+.table button {
+  margin: 0 0.2rem;
 }
