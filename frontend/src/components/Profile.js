@@ -95,7 +95,7 @@ export const Profile = () => {
                 type='password'
                 id='passwordConfirm'
                 placeholder='Confirm Password'
-                onChange={setPasswordConfirm(e.target.value)}
+                onChange={(e) => setPasswordConfirm(e.target.value)}
               />
             </div>
             <div>

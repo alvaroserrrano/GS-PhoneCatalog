@@ -3,6 +3,7 @@ import { addToCart, removeFromCart } from '../actions/cartActions';
 import { useSelector, useDispatch } from 'react-redux';
 import { MessageBox } from './MessageBox';
 import { Link } from 'react-router-dom';
+import '../styles/Checkout.css';
 export const Cart = (props) => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
@@ -23,8 +24,13 @@ export const Cart = (props) => {
     props.history.push('/login?redirect=shipping');
   };
   return (
-    <div className='row__top'>
-      <div className='col-2'>
+    <div className='checkout'>
+      <div className='checkout__left'>
+        <img
+          src='https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg'
+          alt=''
+          className='checkout__ad'
+        />
         <h1>Your shopping cart</h1>
         {cartItems.length === 0 ? (
           <MessageBox>
@@ -34,12 +40,21 @@ export const Cart = (props) => {
           <ul>
             {cartItems.map((item) => (
               <li key={item._id}>
-                <div className='row'>
+                <div className='checkoutProduct'>
                   <div>
-                    <img src={item.imageFileName} className='small' alt='' />
+                    <img
+                      src={item.imageFileName}
+                      className='checkoutProduct__image'
+                      alt=''
+                    />
                   </div>
-                  <div className='min-30'>
-                    <Link to={`/product/${item._id}`}>{item.name}</Link>
+                  <div className='checkoutProduct__info'>
+                    <Link
+                      to={`/product/${item._id}`}
+                      className='checkoutProduct__title'
+                    >
+                      {item.name}
+                    </Link>
                   </div>
                   <div>
                     <select
@@ -57,7 +72,7 @@ export const Cart = (props) => {
                       ))}
                     </select>
                   </div>
-                  <div>${item.price}</div>
+                  <div className='checkoutProduct__price'>${item.price}</div>
                   <div>
                     <button
                       className='button__primary'
@@ -74,8 +89,8 @@ export const Cart = (props) => {
           </ul>
         )}
       </div>
-      <div className='col-1'>
-        <div className='card card-body'>
+      <div className='checkout__right'>
+        <div className='card card-body subtotal'>
           <ul>
             <li>
               <h2>
@@ -83,14 +98,22 @@ export const Cart = (props) => {
                 {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
               </h2>
             </li>
-            <button
-              className='button__primary'
-              type='button'
-              disabled={cartItems.length === 0}
-              onClick={handleCheckout}
-            >
-              Proceed to checkout
-            </button>
+            <li>
+              <small className='subtotal__gift'>
+                <input type='checkbox' name='' id='' /> This order contains a
+                gift
+              </small>
+            </li>
+            <li>
+              <button
+                className='button__primary subtotal__button'
+                type='button'
+                disabled={cartItems.length === 0}
+                onClick={handleCheckout}
+              >
+                Proceed to checkout
+              </button>
+            </li>
           </ul>
         </div>
       </div>
