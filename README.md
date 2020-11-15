@@ -80,6 +80,7 @@ npm install npm@latest -g
 
 ```sh
 git clone https://github.com/alvaroserrrano/GS-PhoneCatalog.git
+cd GS-PhoneCatalog
 ```
 
 2. Install NPM packages
