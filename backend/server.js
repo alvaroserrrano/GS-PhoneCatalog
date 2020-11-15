@@ -25,6 +25,13 @@ app.use((err, req, res, next) => {
     res.status(500).send({ message: err.message });
 });
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'build')));
+
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/products", productRouter);
