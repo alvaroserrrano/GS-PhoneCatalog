@@ -1,5 +1,6 @@
 {
     "name": "gs-phonecatalag",
+    "type": "module",
     "version": "1.0.0",
     "description": "GuideSmith Phone catalog",
     "main": "index.js",
