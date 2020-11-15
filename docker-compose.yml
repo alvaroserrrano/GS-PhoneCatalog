@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  api:
+  backend:
     build:
       context: ./backend
       dockerfile: Dockerfile.dev
@@ -16,7 +16,7 @@ services:
       DB_NAME: process.env.DB_NAME
       JWT_SECRET: process.env.JWT_SECRET
       PAYPAL_CLIENT_ID: process.env.PAYPAL_CLIENT_ID
-  client:
+  frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile.dev

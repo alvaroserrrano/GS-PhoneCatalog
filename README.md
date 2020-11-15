@@ -88,6 +88,24 @@ git clone https://github.com/alvaroserrrano/GS-PhoneCatalog.git
 npm install
 ```
 
+3. Install frontend dependencies
+```sh
+cd ./frontend && npm install
+```
+
+4. Start the backend server
+```sh
+npm start
+```
+
+5. Start the frontend server
+```sh
+cd ./frontend && npm start
+```
+
+6. Visit http://localhost:3000 and test the app
+
+
 ## Docker
 
 ```
