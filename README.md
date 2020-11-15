@@ -90,22 +90,8 @@ npm install
 
 ## Docker
 
-### Build image
-
 ```
-$ docker build -t aserranorivas/phone-catalog .
-```
-
-### Run container
-
-```
-$ docker run -p 49160:8080 aserranorivas/phone-catalog
-```
-
-### Test the app
-
-```
-$ npm run test
+$ docker-compose up
 ```
 
 <!-- THE PROBLEM -->
