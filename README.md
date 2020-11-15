@@ -52,6 +52,8 @@
 
 [Site](https://guidesmith-phone-catalog.herokuapp.com/)
 
+Live site at https://guidesmith-phone-catalog.herokuapp.com/
+
 ### Built With
 
 - [ReactJS](https://reactjs.org)
