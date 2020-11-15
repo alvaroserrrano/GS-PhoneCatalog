@@ -24,7 +24,7 @@ uploads/*.png
 /coverage
 
 #config
-/backend/config.js
+# /backend/config.js
 
 #build
 /build
