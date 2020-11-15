@@ -90,22 +90,24 @@ npm install
 ```
 
 3. Install frontend dependencies
+
 ```sh
 cd ./frontend && npm install
 ```
 
 4. Start the backend server
+
 ```sh
 npm start
 ```
 
 5. Start the frontend server
+
 ```sh
 cd ./frontend && npm start
 ```
 
 6. Visit http://localhost:3000 and test the app
-
 
 ## Docker
 
@@ -119,9 +121,11 @@ $ docker-compose up
 
 - Provides phones' information
 - It should have at least one endpoint
+
   - Method: GET
   - Path: /phones
   - Response body example:
+
   ```
   [
   {
@@ -138,6 +142,14 @@ $ docker-compose up
   },
   ...
   ]
+  ```
+
+  ## Debugging
+
+  ```sh
+  heroku logs  # Show current logs
+  heroku logs --tail # Show current logs and keep updating with any new results
+    heroku ps   #Display dyno status
   ```
 
 ## FRONTEND
