@@ -89,25 +89,33 @@ cd GS-PhoneCatalog
 npm install
 ```
 
-3. Install frontend dependencies
+3. Install MONGODB
+
+Download it from here: https://docs.mongodb.com/manual/administration/install-community/
+
+4. Run Backend
 
 ```sh
-cd ./frontend && npm install
-```
-
-4. Start the backend server
-
-```sh
+npm install
 npm start
 ```
 
-5. Start the frontend server
+5. Run frontend
+
+```sh
+# open new terminal window
+cd frontend
+npm install
+npm start
+```
+
+6. Start the frontend server
 
 ```sh
 cd ./frontend && npm start
 ```
 
-6. Visit http://localhost:3000 and test the app
+7. Visit http://localhost:3000 and test the app
 
 ## Docker
 
