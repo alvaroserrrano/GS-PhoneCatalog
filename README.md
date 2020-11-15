@@ -93,11 +93,39 @@ npm install
 
 Download it from here: https://docs.mongodb.com/manual/administration/install-community/
 
+Simulate your backend environment by creating a .env file following the template inside template-env.txt
+
+You must create a database with MongoDB Atlas https://cloud.mongodb.com/
+
+Create a database, an admin user and allow access from your IP.
+
+You will also need to get your Paypal client-id after creating an app on https://developer.paypal.com/
+
 4. Run Backend
 
 ```sh
 npm install
 npm start
+```
+
+Inside backend create a file config.js with the following:
+
+```sh
+import dotenv from 'dotenv';
+
+dotenv.config({ path: '../config.env' });
+
+export default {
+  PORT: process.env.PORT || 5000,
+  MONGODB_URL:
+    process.env.MONGODB_URL ||
+    '',
+  JWT_SECRET: process.env.JWT_SECRET || '',
+  PAYPAL_CLIENT_ID: process.env.PAYPAL_CLIENT_ID || '',
+  accessKeyId: process.env.accessKeyId || '',
+  secretAccessKey: process.env.secretAccessKey || '',
+};
+
 ```
 
 5. Run frontend
