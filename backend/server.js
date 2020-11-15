@@ -24,7 +24,8 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/../frontend/build')));
 app.get('*', (req, res) =>
-  res.sendFile(path.join('${__dirname}/../frontend/build/index.html'))
+  // res.sendFile(path.join('${__dirname}/../frontend/build/index.html'))
+  res.sendFile('../frontend/build/index.html', { root: __dirname })
 );
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
