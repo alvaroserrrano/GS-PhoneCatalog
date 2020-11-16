@@ -27,9 +27,7 @@ app.get('*', (req, res) =>
   // res.sendFile(path.join('${__dirname}/../frontend/build/index.html'))
   res.sendFile('../frontend/build/index.html', { root: __dirname })
 );
-app.use((err, req, res, next) => {
-  res.status(500).send({ message: err.message });
-});
+
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/v1/users', userRouter);
@@ -56,6 +54,10 @@ app.get('/api/v1/products/:id', (req, res) => {
 
 app.get('/', (req, res) => {
   res.send('Server running');
+});
+
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: err.message });
 });
 
 app.listen(PORT, () => {
