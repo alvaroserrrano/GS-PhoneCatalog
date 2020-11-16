@@ -56,9 +56,9 @@ app.get('/', (req, res) => {
   res.send('Server running');
 });
 
-app.use((err, req, res, next) => {
-  res.status(500).send({ message: err.message });
-});
+// app.use((err, req, res, next) => {
+//   res.status(500).send({ message: err.message });
+// });
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}`);
