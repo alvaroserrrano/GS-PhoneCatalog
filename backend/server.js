@@ -10,6 +10,12 @@ import config from './config.js';
 
 const PORT = process.env.PORT || 5000;
 const mongodbUrl = config.MONGODB_URL;
+
+const app = express();
+
+app.use(express.json());
+app.use(express.static(path.join(__dirname, '/../frontend/build')));
+
 mongoose
   .connect(mongodbUrl, {
     useNewUrlParser: true,
@@ -18,15 +24,6 @@ mongoose
   })
   .then(console.log('Connected to DB'))
   .catch((error) => console.log(error.reason));
-
-const app = express();
-
-app.use(express.json());
-app.use(express.static(path.join(__dirname, '/../frontend/build')));
-app.get('*', (req, res) =>
-  // res.sendFile(path.join('${__dirname}/../frontend/build/index.html'))
-  res.sendFile('../frontend/build/index.html', { root: __dirname })
-);
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -52,9 +49,14 @@ app.get('/api/v1/products/:id', (req, res) => {
   }
 });
 
-app.get('/', (req, res) => {
-  res.send('Server running');
-});
+app.get('*', (req, res) =>
+  // res.sendFile(path.join('${__dirname}/../frontend/build/index.html'))
+  res.sendFile('../frontend/build/index.html', { root: __dirname })
+);
+
+// app.get('/', (req, res) => {
+//   res.send('Server running');
+// });
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
